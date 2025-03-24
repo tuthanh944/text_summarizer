@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tóm tắt văn bản tiếng Việt</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f4f9;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 800px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            resize: none;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            display: block;
+            margin: 20px auto 0;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        .summary {
+            margin-top: 30px;
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 18px;
+            color: #2c3e50;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Tóm tắt văn bản tiếng Việt bằng AI</h2>
+        <form method="post">
+            <label for="text">Nhập văn bản cần tóm tắt:</label>
+            <textarea name="text" placeholder="Dán nội dung vào đây...">{{ text or '' }}</textarea>
+            <input type="submit" value="Tóm tắt">
+        </form>
+
+        {% if summary %}
+        <div class="summary">
+            <strong>Kết quả tóm tắt:</strong>
+            <p>{{ summary }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
